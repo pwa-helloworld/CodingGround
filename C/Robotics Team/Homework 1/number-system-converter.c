@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include<conio.h>
+// #include<conio.h>
 #include <stdbool.h>
 
 int main() {
@@ -103,4 +103,6 @@ int bin_to_dec(int num) {
 
 int dec_to_hex(int num) {
 
+
+  return 0;
 }
