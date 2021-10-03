@@ -8,6 +8,9 @@ int main() {
   int inputNum, currentSys, targetSys, remCheck, temp;
   bool correctInput = true;
 
+  int dec_to_bin(int num);
+  int bin_to_dec(int num);
+
   printf("Please enter a set of number: ");
   scanf("%d", &inputNum);
 
