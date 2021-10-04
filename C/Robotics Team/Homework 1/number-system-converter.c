@@ -1,20 +1,27 @@
 #include <stdio.h>
 #include <math.h>
-#include<conio.h>
+#include <conio.h>
 #include <stdbool.h>
+#include <string.h>
 
 int main() {
 
   int inputNum, currentSys, targetSys, remCheck, temp;
   bool correctInput = true;
+  char hexChar[100000];
 
   int dec_to_bin(int num);
   int bin_to_dec(int num);
   int dec_to_hex(int num);
-  int hex_to_dec(int num);
+  int hex_to_dec(char *hexChar);
+
+  char c[10000];
+
 
   printf("Please enter a set of number: ");
-  scanf("%d", &inputNum);
+  scanf("%s", &c);
+
+  inputNum = atoi(c);
 
   printf("Please enter the current number system: ");
   scanf("%d", &currentSys);
@@ -65,7 +72,7 @@ int main() {
     dec_to_hex(inputNum);
     
   } else if (currentSys == 16 && targetSys == 10) { // hex to dec
-    hex_to_dec(inputNum);
+    hex_to_dec(c);
   }
 
   if (currentSys == 16 && targetSys == 2) { // hex to bin
@@ -177,6 +184,64 @@ int dec_to_hex(int num) {
   return 0;
 }
 
-int hex_to_dec(int num) {
+int hex_to_dec(char *hexChar) {
+  // int p = 0; 
+  //   int decimal = 0;
+  //   int r, i;
+    
+  //   for(i = strlen(hexChar) - 1 ; i >= 0 ; --i){
+        
+  //       // converting c[i] to appropriate decimal form
+  //       if(hexChar[i] >= '0' && hexChar[i] <= '9'){
+  //           r = hexChar[i] - '0';
+  //       }
+  //       else{
+  //           r = hexChar[i] - 'A' + 10;
+  //       }
+        
+  //       decimal = decimal + r * pow(16 , p);
+  //       ++p;
+  //   }
 
+  //   printf("Output = %d", hexChar);
+    
+  //   return decimal;
+  int dec, i;
+    int cnt; /*for power index*/
+    int dig; /*to store digit*/
+
+    printf("Enter hex value: ");
+    gets(hexChar);
+
+    cnt = 0;
+    dec = 0;
+    for (i = (strlen(hexChar) - 1); i >= 0; i--) {
+        switch (hexChar[i]) {
+        case 'A':
+            dig = 10;
+            break;
+        case 'B':
+            dig = 11;
+            break;
+        case 'C':
+            dig = 12;
+            break;
+        case 'D':
+            dig = 13;
+            break;
+        case 'E':
+            dig = 14;
+            break;
+        case 'F':
+            dig = 15;
+            break;
+        default:
+            dig = hexChar[i] - 0x30;
+        }
+        dec = dec + (dig)*pow((double)16, (double)cnt);
+        cnt++;
+    }
+
+    printf("DECIMAL value is: %d", dec);
+    return 0;
 }
