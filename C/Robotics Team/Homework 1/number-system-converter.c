@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-// #include<conio.h>
+#include<conio.h>
 #include <stdbool.h>
 
 int main() {
@@ -10,6 +10,8 @@ int main() {
 
   int dec_to_bin(int num);
   int bin_to_dec(int num);
+  int dec_to_hex(int num);
+  int hex_to_dec(int num);
 
   printf("Please enter a set of number: ");
   scanf("%d", &inputNum);
@@ -25,7 +27,7 @@ int main() {
   if (currentSys == 10 && targetSys == 2) { // dec to bin
     
     dec_to_bin(inputNum);
-    
+
     // printf("%d", dec_to_bin);
   } else if (currentSys == 2 && targetSys == 10) { // bin to dec
 
@@ -60,9 +62,10 @@ int main() {
   }
 
   if (currentSys == 10 && targetSys == 16) { // dec to hex
+    dec_to_hex(inputNum);
     
   } else if (currentSys == 16 && targetSys == 10) { // hex to dec
-    
+    hex_to_dec(inputNum);
   }
 
   if (currentSys == 16 && targetSys == 2) { // hex to bin
@@ -104,8 +107,76 @@ int bin_to_dec(int num) {
   return dec;
 }
 
+// int dec_to_hex(int num) {
+
+//   char hex[10000];
+//   int temp[10000];
+//   int n = 0, j = 0;
+
+//   int rem;
+
+//   while (num > 0) {
+//     rem = num % 16;
+
+//     if (rem >= 10) {
+//       rem = rem + 55;
+//     }
+
+//     temp[n] = rem;
+//     n++;
+//     num /= 16;
+//   }
+
+//   // printf("n: %d\n", n);
+
+//   n = n - 1;
+
+//   // printf("%d\n", temp[2]);
+
+//   // printf("%d\n", n);
+
+//   for (int i = n; i >= 0; i--) {
+//     hex[i] = (char)temp[j];
+//     // // printf("j: %d\n", j);
+//     // printf("%d", hex[j]);
+//     j++;
+//     // printf("%d", i);
+    
+    
+//   }
+
+//   for (int z = 0; z <= n; z++) {
+//     printf("%c", hex[z]);
+//   }
+//   // printf("\n  %d %d %d", hex[0], hex[1], hex[2]);
+
+//   // printf("\nj: %d", j);
+//   getch();
+//   return 0;
+// }
+
+
 int dec_to_hex(int num) {
+  int rem, i = 0;
+  char hexnum[50];
 
-
+  while(num != 0) {
+    rem = num % 16;
+    if(rem < 10)
+        rem = rem + 48;
+    else
+        rem = rem + 55;
+    hexnum[i] = rem;
+    i++;
+    num = num/16;
+  }
+  printf("\nOutput = ");
+  for(i = i - 1; i >= 0; i--)
+      printf("%c", hexnum[i]);
+  getch();
   return 0;
+}
+
+int hex_to_dec(int num) {
+
 }
