@@ -8,6 +8,7 @@ int main() {
 
   int i = 0;
   int meanCal(int num[], int i);
+  int modeCal(int num[], int i);
 
   printf("Enter a number to append to the number set. Enter '/' to stop appending.\n");
 
@@ -41,8 +42,8 @@ int main() {
 
   /*-- calculate the mean --*/
   meanCal(num, i);
+  modeCal(num, i);
   
-
   return 0;
 }
 
@@ -61,9 +62,33 @@ int meanCal(int data[], int length) {
     sum = sum + data[j]; /*-- cal the sum --*/
   }
 
-  printf("\nThe sum of data set: %d", sum);
+  // printf("\nThe sum of data set: %d", sum);
   mean = sum / length; /*-- cal the mean --*/
-  printf("The mean is: %.2f", mean);
+  printf("\nThe mean is: %f", mean);
 
-  return 0;
+  return mean;
 }
+
+int modeCal(int data[], int length) {
+
+  int mode = 0, maxCount = 0;
+
+  for (int i = 0; i < length; ++i) {
+    int count = 0;
+    
+    for (int j = 0; j < length; ++j) {
+        if (data[j] == data[i])
+        ++count;
+    }
+    
+    if (count > maxCount) {
+        maxCount = count;
+        mode = data[i];
+    }
+  }
+
+  printf("\nThe mode is: %d", mode);
+
+   return mode;
+}
+
