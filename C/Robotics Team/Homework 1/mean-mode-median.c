@@ -65,10 +65,5 @@ int meanCal(int data[], int length) {
   mean = sum / length; /*-- cal the mean --*/
   printf("The mean is: %.2f", mean);
 
-  
-
-
-
-
   return 0;
 }
