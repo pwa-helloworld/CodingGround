@@ -22,12 +22,12 @@ int main() {
 
 
   // Convert method
-  if (currentSys == 10 && targetSys == 2) {
-    // dec to bin
+  if (currentSys == 10 && targetSys == 2) { // dec to bin
+    
     dec_to_bin(inputNum);
+    
     // printf("%d", dec_to_bin);
-  } else if (currentSys == 2 && targetSys == 10) {
-    // bin to dec
+  } else if (currentSys == 2 && targetSys == 10) { // bin to dec
 
     temp = inputNum;
 
@@ -59,16 +59,16 @@ int main() {
     }
   }
 
-  if (currentSys == 10 && targetSys == 16) {
-    // dec to hex
-  } else if (currentSys == 16 && targetSys == 10) {
-    // hex to dec
+  if (currentSys == 10 && targetSys == 16) { // dec to hex
+    
+  } else if (currentSys == 16 && targetSys == 10) { // hex to dec
+    
   }
 
-  if (currentSys == 16 && targetSys == 2) {
-    // hex to bin
-  } else if (currentSys == 2 && targetSys == 16) {
-    // bin to hex
+  if (currentSys == 16 && targetSys == 2) { // hex to bin
+    
+  } else if (currentSys == 2 && targetSys == 16) { // bin to hex
+    
   }
 
   return 0;
