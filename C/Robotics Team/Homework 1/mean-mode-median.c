@@ -28,6 +28,11 @@ int main() {
     }
   }
 
+  for (int j = 0; j < sizeof(num); ++j) {
+    printf("$d", num[j]);
+    printf(", ");
+  }
+
   // meanCal(num);
   // int mean, n;
   // int arraySize = sizeof(num);
