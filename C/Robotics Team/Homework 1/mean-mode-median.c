@@ -3,22 +3,23 @@
 
 int main() {
 
-  char input[20];
-  int num[20];
+  char input[10000];
+  int num[10000];
+
   int i = 0;
-  int meanCal();
+  int meanCal(int num[], int i);
 
   printf("Enter a number to append to the number set. Enter '/' to stop appending.\n");
 
   while (1) {
     scanf("%s", input);
 
-    /*check if entered '/'*/
+    /*-- check if entered '/' --*/
     if (input[0] == '/') {
       printf("stop\n");
       break;
     } else {
-      /*save the input into num array*/
+      /*-- save the input into num array --*/
       int temp;
       temp = atoi(input);
 
@@ -26,42 +27,48 @@ int main() {
       printf("The %d of data is: %d\n", i, num[i]);
       i++;
     }
+
+    printf("The length of set: %d\n", i);
   }
 
-  for (int j = 0; j < sizeof(num); ++j) {
-    printf("$d", num[j]);
-    printf(", ");
-  }
+  printf("The total number of data: %d\n", i);
 
-  // meanCal(num);
-  // int mean, n;
-  // int arraySize = sizeof(num);
-  // int intSize = sizeof(num[0]);
-  // int length = arraySize / intSize;
+  // printf("The data set:\n");
+  // for (int j = 0; j < i; ++j) {
+  //   printf("%d", num[j]);
+  //   printf(", ");
+  // }
 
-  // printf("%d", length);
-
-
-  
-  // printf("%d", n);
-
-
+  /*-- calculate the mean --*/
+  meanCal(num, i);
   
 
   return 0;
 }
 
-// int meanCal(data) {
-//   int mean, n;
-//   int arraySize = sizeof(data);
-//   int intSize = sizeof(data[0]);
 
+int meanCal(int data[], int length) {
+  int sum = 0; 
+  float mean = 0;   
+  
+  printf("The length of data set: %d\n", length); /*-- dislay the length --*/
 
+  printf("The data set: "); /*-- display the data set --*/
+  for (int j = 0; j < length; j++) {
+    printf("%d", data[j]);
+    printf(", ");
+
+    sum = sum + data[j]; /*-- cal the sum --*/
+  }
+
+  printf("\nThe sum of data set: %d", sum);
+  mean = sum / length; /*-- cal the mean --*/
+  printf("The mean is: %2f", mean);
 
   
-//   printf("%d", n);
 
 
 
-//   return 0;
-// }
+
+  return 0;
+}

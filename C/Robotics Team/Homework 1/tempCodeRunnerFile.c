@@ -1,6 +1,5 @@
-int mean, n;
-  // int arraySize = sizeof(num);
-  // int intSize = sizeof(num[0]);
-  // int length = arraySize / intSize;
-
-  // printf("%d", length);
+printf("The data set:\n");
+  // for (int j = 0; j < i; ++j) {
+  //   printf("%d", num[2]);
+  //   printf(", ");
+  // }
