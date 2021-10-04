@@ -1,2 +1,2 @@
 language = "c"
-run = "g++ C/HelloWorld/main.c"
+run = "g++ a.out"
