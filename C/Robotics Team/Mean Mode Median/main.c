@@ -25,35 +25,31 @@ int main() {
   char result[10000];
   int count = 10;
 
+  // while (dataEnd != true) {
+  //   scanf("%s", &input);
 
-  i = 0;
-  j = 0;
-
-  while (dataEnd != true) {
-    scanf("%s", &input);
-
-    numbers[i] = atoi(input);
-    printf("%d", numbers[i]);
+  //   numbers[i] = atoi(input);
+  //   printf("%d", numbers[i]);
     
 
-    // while(check == true) {
-    //   if (input[j] == '/'){
-    //     // exclamationCheck = 1;
-    //     dataEnd = true;
-    //     printf("stop");
-    //     break;
-    //   } else {
-    //     // check = false;
-    //     j++;
-    //     printf("input: %s", input);
-    //   }
+  //   while(check == true) {
+  //     if (input[j] == '/'){
+  //       // exclamationCheck = 1;
+  //       dataEnd = true;
+  //       printf("stop");
+  //       break;
+  //     } else {
+  //       // check = false;
+  //       j++;
+  //       printf("input: %s", input);
+  //     }
       
-    // }
+  //   }
       
       
-    i++;
-    // printf("%d" ,dataEnd);
-  }
+  //   i++;
+  //   // printf("%d" ,dataEnd);
+  // }
 
   
 
