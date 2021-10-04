@@ -63,7 +63,7 @@ int meanCal(int data[], int length) {
 
   printf("\nThe sum of data set: %d", sum);
   mean = sum / length; /*-- cal the mean --*/
-  printf("The mean is: %2f", mean);
+  printf("The mean is: %.2f", mean);
 
   
 
