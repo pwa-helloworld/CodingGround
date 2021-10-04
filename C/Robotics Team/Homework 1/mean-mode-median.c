@@ -9,6 +9,7 @@ int main() {
   int i = 0;
   int meanCal(int num[], int i);
   int modeCal(int num[], int i);
+  int calMedian(int num[], int i);
 
   printf("Enter a number to append to the number set. Enter '/' to stop appending.\n");
 
@@ -43,6 +44,7 @@ int main() {
   /*-- calculate the mean --*/
   meanCal(num, i);
   modeCal(num, i);
+  medianCal(num, i);
   
   return 0;
 }
@@ -91,4 +93,45 @@ int modeCal(int data[], int length) {
 
    return mode;
 }
+
+void sort(int data[], int n) {
+
+  int temp;
+
+  for (int i = 0; i < n; ++i) {
+
+    for (int j = i + 1; j < n; ++j) {
+
+      if (data[i] > data[j]) {
+
+          temp =  data[i];
+          data[i] = data[j];
+          data[j] = temp;
+      }
+
+    }
+
+  }
+}
+
+int medianCal(int data[], int length) {
+  int n = length;
+  float median;
+
+  sort(data, length);
+
+  if (n % 2 != 0) { // the length is odd
+    median = data[(n + 1) / 2 - 1];
+    printf(" odd ");
+  } else if (n % 2 == 0) { // the length is even
+    median = (data[(n + 1) / 2 - 1] + data[(n + 1) / 2]) / 2;
+    printf(" even ");
+  }
+
+  printf("\nThe median is %f", median);
+
+  return median;
+}
+
+
 
