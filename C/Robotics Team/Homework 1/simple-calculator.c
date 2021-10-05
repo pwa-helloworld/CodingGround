@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 int main() {
-  char userInput[10000];
+  char userInput[] = {};
 
-  scanf("$s", userInput);
+  scanf("%s", userInput);
+
+  printf("%d", sizeof(userInput));
 
   for (int i = 0; i <= sizeof(userInput); i++) {
-    printf("%c", userInput[i]);
+    // printf("%c", userInput[i]);
+    
   }
 
   return 0;

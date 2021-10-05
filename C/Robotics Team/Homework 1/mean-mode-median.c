@@ -26,14 +26,14 @@ int main() {
       temp = atoi(input);
 
       num[i] = temp;
-      printf("The %d of data is: %d\n", i, num[i]);
+      // printf("The %d of data is: %d\n", i, num[i]);
       i++;
     }
 
-    printf("The length of set: %d\n", i);
+    // printf("The length of set: %d\n", i);
   }
 
-  printf("The total number of data: %d\n", i);
+  // printf("The total number of data: %d\n", i);
 
   // printf("The data set:\n");
   // for (int j = 0; j < i; ++j) {
@@ -56,10 +56,10 @@ int meanCal(int data[], int length) {
   
   printf("The length of data set: %d\n", length); /*-- dislay the length --*/
 
-  printf("The data set: "); /*-- display the data set --*/
+  // printf("The data set: "); /*-- display the data set --*/
   for (int j = 0; j < length; j++) {
-    printf("%d", data[j]);
-    printf(", ");
+    // printf("%d", data[j]);
+    // printf(", ");
 
     sum = sum + data[j]; /*-- cal the sum --*/
   }
@@ -122,10 +122,10 @@ int medianCal(int data[], int length) {
 
   if (n % 2 != 0) { // the length is odd
     median = data[(n + 1) / 2 - 1];
-    printf(" odd ");
+    // printf(" odd ");
   } else if (n % 2 == 0) { // the length is even
     median = (data[(n + 1) / 2 - 1] + data[(n + 1) / 2]) / 2;
-    printf(" even ");
+    // printf(" even ");
   }
 
   printf("\nThe median is %f", median);
