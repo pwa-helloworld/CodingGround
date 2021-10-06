@@ -65,7 +65,7 @@ int meanCal(int data[], int length) {
   }
 
   // printf("\nThe sum of data set: %d", sum);
-  mean = sum / length; /*-- cal the mean --*/
+  mean = (float)sum / length; /*-- cal the mean --*/
   printf("\nThe mean is: %f", mean);
 
   return mean;
@@ -124,7 +124,7 @@ int medianCal(int data[], int length) {
     median = data[(n + 1) / 2 - 1];
     // printf(" odd ");
   } else if (n % 2 == 0) { // the length is even
-    median = (data[(n + 1) / 2 - 1] + data[(n + 1) / 2]) / 2;
+    median = ((float)data[(n + 1) / 2 - 1] + (float)data[(n + 1) / 2]) / 2;
     // printf(" even ");
   }
 
