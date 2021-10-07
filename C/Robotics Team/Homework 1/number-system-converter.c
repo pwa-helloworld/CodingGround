@@ -184,64 +184,28 @@ int dec_to_hex(int num) {
   return 0;
 }
 
-int hex_to_dec(char *hexChar) {
-  // int p = 0; 
-  //   int decimal = 0;
-  //   int r, i;
+int hex_to_dec(char hex[]) {
+  
+  // printf("%s", hex);
+  int length = sizeof(hex);
+  int dec[10000];
+
+  // for (int i = 0; i < length; i++) {
+  //   printf("%c\n", hex[i]);
+  // }
+
+  int i, j;
+
+  
+
+  printf("\n");
+  // printf("%d\n", sizeof(hex));
+
+  // for (int j = sizeof(hex); j >= 0; j--) {
+  //   // printf("%c\n", hex[j]);
+  //   printf("%d\n", j);
     
-  //   for(i = strlen(hexChar) - 1 ; i >= 0 ; --i){
-        
-  //       // converting c[i] to appropriate decimal form
-  //       if(hexChar[i] >= '0' && hexChar[i] <= '9'){
-  //           r = hexChar[i] - '0';
-  //       }
-  //       else{
-  //           r = hexChar[i] - 'A' + 10;
-  //       }
-        
-  //       decimal = decimal + r * pow(16 , p);
-  //       ++p;
-  //   }
-
-  //   printf("Output = %d", hexChar);
-    
-  //   return decimal;
-  int dec, i;
-    int cnt; /*for power index*/
-    int dig; /*to store digit*/
-
-    printf("Enter hex value: ");
-    gets(hexChar);
-
-    cnt = 0;
-    dec = 0;
-    for (i = (strlen(hexChar) - 1); i >= 0; i--) {
-        switch (hexChar[i]) {
-        case 'A':
-            dig = 10;
-            break;
-        case 'B':
-            dig = 11;
-            break;
-        case 'C':
-            dig = 12;
-            break;
-        case 'D':
-            dig = 13;
-            break;
-        case 'E':
-            dig = 14;
-            break;
-        case 'F':
-            dig = 15;
-            break;
-        default:
-            dig = hexChar[i] - 0x30;
-        }
-        dec = dec + (dig)*pow((double)16, (double)cnt);
-        cnt++;
-    }
-
-    printf("DECIMAL value is: %d", dec);
-    return 0;
+  // }
+  
+  return 0;
 }
