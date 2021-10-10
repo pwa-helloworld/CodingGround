@@ -1,36 +1,50 @@
-#include<stdio.h>
-#include<string.h>
-#include<math.h>
-int HexadecimalToDecimal(char *hex) {
-    int p = 0; 
-    int decimal = 0;
-    int r, i;
-    
-    // instead of reading charcacters from Right-To-Left
-    // we can also read character from Left-To-Right
-    // we just have to initialize p with strlen(c) - 1
-    // and decrement p in each iteration
-    for(i = strlen(hex) - 1 ; i >= 0 ; --i){
-        
-        // converting c[i] to appropriate decimal form
-        if(hex[i]>='0'&&hex[i]<='9'){
-            r = hex[i] - '0';
-        }
-        else{
-            r = hex[i] - 'A' + 10;
-        }
-        
-        decimal = decimal + r * pow(16 , p);
-        ++p;
-    }
-    
-    return decimal;
-}
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
 
-int main() { 
-    char hex[100];
-    printf("Enter Hexadecimal: ");
+int main()
+{
+    char hex[17];
+    long long decimal, place;
+    int i = 0, val, len;
+
+    decimal = 0;
+    place = 1;
+
+    /* Input hexadecimal number from user */
+    printf("Enter any hexadecimal number: ");
     scanf("%s", hex);
-    printf("\nDecimal: %d", HexadecimalToDecimal(hex));
+
+    /* Find the length of total number of hex digit */
+    len = strlen(hex);
+    len--;
+
+    /*
+     * Iterate over each hex digit
+     */
+    for(i=0; hex[i]!='\0'; i++)
+    {
+ 
+        /* Find the decimal representation of hex[i] */
+        if(hex[i]>='0' && hex[i]<='9')
+        {
+            val = hex[i] - 48;
+        }
+        else if(hex[i]>='a' && hex[i]<='f')
+        {
+            val = hex[i] - 97 + 10;
+        }
+        else if(hex[i]>='A' && hex[i]<='F')
+        {
+            val = hex[i] - 65 + 10;
+        }
+
+        decimal += val * pow(16, len);
+        len--;
+    }
+
+    printf("Hexadecimal number = %s\n", hex);
+    printf("Decimal number = %lld", decimal);
+
     return 0;
 }

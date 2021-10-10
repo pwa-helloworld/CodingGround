@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
-#include <conio.h>
+// #include <conio.h>
 #include <stdbool.h>
 #include <string.h>
 
@@ -76,8 +77,12 @@ int main() {
   }
 
   if (currentSys == 16 && targetSys == 2) { // hex to bin
+
+    dec_to_bin((int)hex_to_dec(c));
     
   } else if (currentSys == 2 && targetSys == 16) { // bin to hex
+
+    dec_to_hex((int)bin_to_dec(inputNum));
     
   }
 
@@ -185,27 +190,76 @@ int dec_to_hex(int num) {
 }
 
 int hex_to_dec(char hex[]) {
-  
-  // printf("%s", hex);
-  int length = sizeof(hex);
-  int dec[10000];
 
-  // for (int i = 0; i < length; i++) {
-  //   printf("%c\n", hex[i]);
-  // }
+  long long decimal, place;
+  int i = 0, val, len;
 
-  int i, j;
+  decimal = 0;
+  place = 1;
 
-  
+  len = strlen(hex);
+  len--;
+  // printf("len: %d\n", len);
 
-  printf("\n");
-  // printf("%d\n", sizeof(hex));
+  for(i = 0; hex[i] != '\0'; i++) {
+    /* Find the decimal representation of hex[i] */
+    if(hex[i] >= '0' && hex[i] <= '9') {
+        val = hex[i] - 48;
+    } 
+    else if(hex[i] >= 'a' && hex[i] <= 'f') {
+        val = hex[i] - 97 + 10;
+    } 
+    else if(hex[i] >= 'A' && hex[i] <= 'F') {
+        val = hex[i] - 65 + 10;
+    }
 
-  // for (int j = sizeof(hex); j >= 0; j--) {
-  //   // printf("%c\n", hex[j]);
-  //   printf("%d\n", j);
-    
-  // }
-  
-  return 0;
+    decimal += val * pow(16, len);
+    len--;
+  }
+
+  // printf("Hexadecimal number = %s\n", hex);
+  printf("Output = %lld", decimal);  
+
+  return decimal;
 }
+
+  // char inv[10000];
+  // int dec[10000];
+  // int i, j = 0, n = 0, k;
+  // // int temp[10000];
+
+  // // printf("%s", hex);
+  // while (1) {
+  //   if (hex[n] == '\0') {
+  //     break;
+  //   }
+  //   n++;
+  // }
+
+  // for (i = n - 1; i >= 0; i--) {
+  //   // temp[i] = atoi(hex);
+
+  //   // printf("%d\n", temp[i]);
+
+  //   inv[j] = hex[i];
+  //   printf("inv %d: %c\n", j, inv[j]);
+  //   // printf("i = %d: %c\n", i, hex[i]);
+  //   // printf("%c\n", dec[j]);
+
+  //   j++;
+  // }
+
+  // printf("%s\n", inv);
+
+  // for (k = 0; k <= j - 1; k++) {
+  //   int val;
+  //   char temp = dec[k];
+  //   dec[k] = atoi(temp);
+  //   val = atoi(temp);
+  //   printf("%d\n", val);
+
+  //   // printf("%c\n", temp);
+  //   // printf("Dec %d: %d\n", k, dec[k]);
+  // }
+
+
