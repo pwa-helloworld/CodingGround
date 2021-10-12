@@ -55,73 +55,116 @@
 
 //   return 0;
 // }
+
+
+
+// #include <stdio.h>
+// #include <stdint.h>
+// #include <stdbool.h>
+// #include <string.h>
+// #include <stdlib.h>
+
+// float firf, secf;
+// char f;
+// char opt;
+// char k[100], str[100], firInt[100], secInt[100];
+// int i,j,z;
+// int a,b,c = 0;
+// char *store;
+
+// int main(void) {
+
+//   scanf("%s", str);
+
+//   for (i = 0; i < 100; i++) {
+ 
+ 
+ 
+//   if(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
+
+//     if(str[i] == '+') {
+//       f = '+';
+//     }
+//     if(str[i] == '-') {
+//       f = '-';
+//     }
+//     if(str[i] == '*') {
+//       f = '*';
+//     }
+//     if(str[i] == '/') {
+//       f = '/';
+//     }
+//     a = i;
+
+//   }
+// }
+
+ 
+//   for (j = 0; j < a; j++) {
+//     firInt[j] = str[j];
+//   }
+ 
+//   for (z = a+1; z < 100; z++) {
+//     secInt[z-a-1] = str[z];
+//   }
+
+//   b = atoi(firInt);
+//   c = atoi(secInt);
+//   firf = b;
+//   secf = c;
+//   if(f == '+') {
+//       printf("%f", firf + secf);
+//   }
+//   if(f == '-') {
+//     printf("%f", firf - secf);
+//   }
+//   if(f == '*') {
+//     printf("%f", firf * secf);
+//   }
+//   if(f == '/') {
+//     printf("%f", firf / secf);
+//   }
+
+//   return 0;
+
+// }
+
+
 #include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
 #include <string.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
-float firf, secf;
-char f;
-char opt;
-char k[100], str[100], firInt[100], secInt[100];
-int i,j,z;
-int a,b,c = 0;
-char *store;
+int main() {
 
-int main(void) {
+  char input[10000];
+  char firstNumChar[10000], secNumChar[10000];
+  int firstNumInt, secNumInt;
+  int operatorPos = 0;
+  int totalLength = 0;
 
-  scanf("%s", str);
 
-  for (i = 0; i < 100; i++) {
- 
- 
- 
-  if(str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/') {
 
-    if(str[i] == '+') {
-      f = '+';
-    }
-    if(str[i] == '-') {
-      f = '-';
-    }
-    if(str[i] == '*') {
-      f = '*';
-    }
-    if(str[i] == '/') {
-      f = '/';
-    }
-    a = i;
+  printf("Enter your equation: ");
+  scanf("%s", input);
 
+  while (1) {
+    if (input[totalLength] == '\0') break;
+    totalLength++;
   }
-}
+  printf("Total length: %d\n", totalLength);
 
- 
-  for (j = 0; j < a; j++) {
-    firInt[j] = str[j];
+  while (1) {
+    if (input[operatorPos] == '+' || input[operatorPos] == '-' || input[operatorPos] == '*' || input[operatorPos] == '/') break;
+    operatorPos++;
   }
- 
-  for (z = a+1; z < 100; z++) {
-    secInt[z-a-1] = str[z];
-  }
+  printf("Operator pos: %d\n", operatorPos);
 
-  b = atoi(firInt);
-  c = atoi(secInt);
-  firf = b;
-  secf = c;
-  if(f == '+') {
-      printf("%f", firf + secf);
+  for (int i = 0; i < operatorPos; i++) {
+    firstNumChar[i] = input[i];
   }
-  if(f == '-') {
-    printf("%f", firf - secf);
-  }
-  if(f == '*') {
-    printf("%f", firf * secf);
-  }
-  if(f == '/') {
-    printf("%f", firf / secf);
-  }
+  printf("firstNumChar %s\n", firstNumChar);
+  firstNumInt = atoi(firstNumChar);
+  printf("firstNumInt %d\n", firstNumInt);
 
   return 0;
-
 }
