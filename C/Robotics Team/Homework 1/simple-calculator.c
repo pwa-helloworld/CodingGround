@@ -141,30 +141,66 @@ int main() {
   int firstNumInt, secNumInt;
   int operatorPos = 0;
   int totalLength = 0;
-
-
+  float output;
 
   printf("Enter your equation: ");
   scanf("%s", input);
 
+  /* -- get the total length of the input equation -- */
   while (1) {
     if (input[totalLength] == '\0') break;
     totalLength++;
   }
   printf("Total length: %d\n", totalLength);
 
+  /* -- get the position of operator -- */
   while (1) {
     if (input[operatorPos] == '+' || input[operatorPos] == '-' || input[operatorPos] == '*' || input[operatorPos] == '/') break;
     operatorPos++;
   }
   printf("Operator pos: %d\n", operatorPos);
 
+  /* -- get the first number -- */
   for (int i = 0; i < operatorPos; i++) {
     firstNumChar[i] = input[i];
   }
   printf("firstNumChar %s\n", firstNumChar);
   firstNumInt = atoi(firstNumChar);
   printf("firstNumInt %d\n", firstNumInt);
+
+  	/* -- get the second number -- */
+  for (int j = operatorPos + 1; j < totalLength; j++) {
+    	secNumChar[j - operatorPos - 1] = input[j];
+  }
+  printf("secNumChar %s\n", secNumChar);
+  secNumInt = atoi(secNumChar);
+  printf("secNumInt %d\n", secNumInt);
+
+  /* -- start cal -- */
+  switch (input[operatorPos])
+  {
+  case '+':
+    output = (float)firstNumInt + (float)secNumInt;
+    break;
+
+  case '-':
+    output = (float)firstNumInt - (float)secNumInt;
+    break;
+
+  case '*':
+    output = (float)firstNumInt * (float)secNumInt;
+    break;
+
+  case '/':
+    output = (float)firstNumInt / (float)secNumInt;
+    break;
+
+  default:
+    break;
+  }
+
+  printf("Output: %f", output);
+
 
   return 0;
 }
