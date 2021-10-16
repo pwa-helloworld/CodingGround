@@ -2,14 +2,14 @@
 
 int main() {
 
-  int x, n, i = 0;
+  int x, n;
   int temp, output;
-  int power(x, n);
+  // int power(int x, int n);
 
   printf("Enter the base: ");
-  scanf("%d", x);
+  scanf("%d", &x);
   printf("Enter the index: ");
-  scanf("%d", n);
+  scanf("%d", &n);
 
   power(x, n);
 
@@ -23,13 +23,12 @@ int power(x, n) {
   int temp, output;
 
   temp = x;
-  printf("%d\n", temp);
   while (1) {
     temp = temp * x;
     i++;
-    printf("%d\n", temp);
+    // printf("%d\n", temp);
 
-    if (i == n) break;
+    if (i == n - 1) break;
   }
 
   output = temp;
