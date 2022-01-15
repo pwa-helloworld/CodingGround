@@ -1,6 +1,6 @@
 import turtle
 
-s = turtle.getscreen()
+turtle.getscreen()
 
 turtle.fd(100)
 turtle.rt(90)
