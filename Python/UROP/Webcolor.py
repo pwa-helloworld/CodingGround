@@ -1,12 +1,15 @@
-# from PIL import Image
+from PIL import Image
 
-# filename = "../sample.jpg"
-# img = Image.open(filename)
-# img.show() 
+def rgb_of_pixel(img_path, x, y):
+  im = Image.open(img_path).convert('RGB')
+  r, g, b = im.getpixel((x, y))
+  a = (r, g, b)
+  return a
 
-import imageio
-import matplotlib.pyplot as plt
+img = "D:\download.png"
 
-pic = imageio.imread("D:\Windows 10\OneDrive\OneDrive - HKUST Connect\GitHub\CodingGround\Python\UROP\sample.jpg")
-plt.figure(figsize = (15, 15))
-plt.imshow(pic)
+x = y = 0
+for i in range (200):
+  x += 1
+  y += 1
+  print(i, ": ", rgb_of_pixel(img, x, y))
