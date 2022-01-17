@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # from PIL import Image
 
 # filename = "../sample.jpg"
