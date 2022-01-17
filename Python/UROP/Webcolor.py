@@ -1,16 +1,13 @@
-# x = 5
+#import webcolors
 
-# def foo():
-#   global x
-#   x = x - 1
-#   print("x inside:", x)
+def color_tuple_to_string(rgb):
+        # try to convert to an english name
+  try:
+    return webcolors.rgb_to_name(rgb)
+    print(webcolors.rgb_to_name(rgb))
+  except Exception:
+            #print e
+    pass
+  return str(rgb)
 
-
-# foo()
-# print("x outside:", x)
-
-list = ["a", "b"]
-
-# t = list[0]
-
-print(list[0:2])
+color_tuple_to_string(000000)
