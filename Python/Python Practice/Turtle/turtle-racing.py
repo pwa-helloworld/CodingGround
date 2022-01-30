@@ -1,5 +1,5 @@
 import turtle
-from matplotlib.pyplot import get
+# from matplotlib.pyplot import get
 
 class ScreenSetup:
   def __init__(self, width, height):
