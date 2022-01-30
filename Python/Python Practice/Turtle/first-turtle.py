@@ -1,6 +1,10 @@
 import turtle
 
-turtle.getscreen()
+# turtle.getscreen()
+screen = turtle.Screen()
+screen.setup(500, 500)
+screen.title('Turtle Screen')
+
 turtle.speed(5)
 
 for i in range (20):
