@@ -33,3 +33,23 @@
 
 #====================================================================
 
+from turtle import *
+
+import turtle
+
+
+ws = turtle.Screen()
+
+
+tur = turtle.Turtle()
+tur.color("black")
+tur.penup()
+
+
+def motion():
+  tur.forward(180)
+
+
+turtle.listen()
+turtle.onkeypress(motion(),"w")
+turtle.done()

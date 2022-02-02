@@ -1,5 +1,17 @@
+from hashlib import new
 import turtle
-from matplotlib.pyplot import get
+import random
+import time
+from typing import NewType
+# from matplotlib.pyplot import get
+# from pyparsing import java_style_comment
+
+# ---------- Global var ---------- #
+turtleList = []
+width = 600
+height = 600
+startingPoint = 50
+endPoint = 550
 
 class ScreenSetup:
   def __init__(self, width, height):
@@ -10,6 +22,8 @@ class ScreenSetup:
     screen = turtle.getscreen()
     screen.setup(self.width, self.height)
     screen.title('Turtle Racing')
+    turtle.setworldcoordinates(0, 0, self.width, self.height) # set (0, 0) at the bottom left corner
+    turtle.hideturtle()
 
 def get_number_of_racer():
   racers = 0
@@ -32,13 +46,79 @@ def get_number_of_racer():
       
   return racers
 
-get_number_of_racer()
-ScreenSetup(500, 500).create_screen()
+def create_turtle():
+  i = 0
+  x = width / (racers + 1)
+  turtleSize = turtle.turtlesize()
+  
+  for i in range(racers):
+    newTurt = turtle.Turtle()
+
+    newTurt.pencolor('white')
+    newTurt.fillcolor('white')
+    newTurt.penup()
+    newTurt.goto(width / 2, height / 2)
+    newTurt.pendown()
+    newTurt.pencolor('black')
+    newTurt.fillcolor('black')
+
+    newTurt.shape('turtle')
+    newTurt.setheading(90)
+    newTurt.speed(0)
+
+    newTurt.goto(x, startingPoint)
+    print("x pos: ", x)  
+    x += (width / (racers + 1))
+    
+    turtleList.append(newTurt)
+
+    # time.sleep(1)
 
 
-# print(get_number_of_racer())
+def draw_edge_line():
+  print("Drawing edge line")
+
+  startLine = turtle.Turtle()
+  startLine.hideturtle()
+
+  startLine.pencolor('white')
+  startLine.fillcolor('white')
+  startLine.penup()
+  startLine.goto(0, startingPoint)
+  startLine.pendown()
+  startLine.pencolor('black')
+  startLine.fillcolor('black')
+  startLine.forward(width)
+  startLine.speed(0)
 
 
+  endLine = turtle.Turtle()
+  endLine.hideturtle()
+
+  endLine.pencolor('white')
+  endLine.fillcolor('white')
+  endLine.penup()
+  endLine.goto(0, endPoint)
+  endLine.pendown()
+  endLine.pencolor('black')
+  endLine.fillcolor('black')
+  endLine.forward(width)
+  endLine.speed(0)
+
+def racing():
+  print("Start racing")
+
+
+
+
+
+racers = get_number_of_racer()
+ScreenSetup(width, height).create_screen()
+draw_edge_line()
+create_turtle()
+
+print(turtleList)
+turtleList[2].fillcolor('blue')
 
 
 
