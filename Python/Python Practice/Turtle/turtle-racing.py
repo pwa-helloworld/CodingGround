@@ -1,5 +1,5 @@
 import turtle
-# from matplotlib.pyplot import get
+from matplotlib.pyplot import get
 
 class ScreenSetup:
   def __init__(self, width, height):
@@ -33,8 +33,12 @@ def get_number_of_racer():
   return racers
 
 get_number_of_racer()
-
 ScreenSetup(500, 500).create_screen()
+
+
+# print(get_number_of_racer())
+
+
 
 
 
