@@ -33,23 +33,73 @@
 
 #====================================================================
 
-from turtle import *
+# from turtle import *
 
-import turtle
-
-
-ws = turtle.Screen()
+# import turtle
 
 
-tur = turtle.Turtle()
-tur.color("black")
-tur.penup()
+# ws = turtle.Screen()
 
 
-def motion():
-  tur.forward(180)
+# tur = turtle.Turtle()
+# tur.color("black")
+# tur.penup()
 
 
-turtle.listen()
-turtle.onkeypress(motion(),"w")
-turtle.done()
+# def motion():
+#   tur.forward(180)
+
+
+# turtle.listen()
+# turtle.onkeypress(motion(),"w")
+# turtle.done()
+
+
+# from math import *
+# number1 = float(input("Please enter a number:"))
+# sign = input("Please enter a sign(+,-,*,/,^):")
+# number2 = float(input("Please enter another number:"))
+# if sign == "+":
+#     print ("Answer:"+str(number1+number2))
+# elif sign == "-":
+#     print ("Answer:"+str(number1-number2))
+# elif sign == "*":
+#     print ("Answer:"+str(number1*number2))
+# elif sign == "/":
+#     print ("Answer(with decimal place):"+str(number1/number2))
+#     print ("Answer(without decimal place):"+str(number1//number2))
+#     print ("Reminder:"+str(number1%number2))
+# elif sign == "^":
+#     print ("Answer:"+str(number1**number2))
+# else:
+#     print("Sorry that this is just a simple calculator,we can't help.")
+# question = input ("Do you have anymore questions?(yes/no):")
+# def calculator():
+#     number1 = float(input("Please enter a number:"))
+#     sign = input("Please enter a sign(+,-,*,/,^):")
+#     number2 = float(input("Please enter another number:"))
+#     if sign == "+":
+#         print ("Answer:"+str(number1+number2))
+#     elif sign == "-":
+#         print ("Answer:"+str(number1-number2))
+#     elif sign == "*":
+#         print ("Answer:"+str(number1*number2))
+#     elif sign == "/":
+#         print ("Answer(with decimal place):"+str(number1/number2))
+#         print ("Answer(without decimal place):"+str(number1//number2))
+#         print ("Reminder:"+str(number1%number2))
+#     elif sign == "^":
+#         print("Answer:"+str(number1**number2))
+#     else:
+#         print("Sorry that this is just a simple calculator,we can't help.")
+#     question = input ("Do you have anymore questions?(yes/no):")
+#     if question == "yes":
+#         calculator()
+#     elif question == "no":
+#         print("Thank you for using,goodbye.")
+#         SystemExit
+# if question == "yes":
+#     calculator()
+# elif question == "no":
+#     print("Thank you for using,goodbye.")
+#     SystemExit
