@@ -41,6 +41,9 @@ def get_pos(i, j):
   # turtle.write(str(i)+","+str(j))
   
 
+def add_img():
+  turtle.Screen().addshape('src/HKUST.gif')
+  turtle.Turtle().shape('src/HKUST.gif')
 
 
 # Run turtle
@@ -48,6 +51,7 @@ def get_pos(i, j):
 ScreenSetup(width, height).create_screen()
 ScreenSetup(width, height).draw_grid()
 turtle.getscreen().onclick(get_pos)
+add_img()
 
 
 
