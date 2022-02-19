@@ -1,4 +1,6 @@
 import turtle
+import time
+
 
 width = 600
 height = 600
@@ -37,14 +39,16 @@ def get_pos(i, j):
   turtle.dot(5, 'red')
 
   print(turtle.pos())
+  turtle.color('red')
+  turtle.write(turtle.pos())
   
   # turtle.write(str(i)+","+str(j))
   
 
-# def add_img():
-  # turtle.Screen().addshape('src/HKUST.gif')
-  # turtle.Turtle().shape('src/HKUST.gif')
-  
+def add_img():
+  turtle.hideturtle()
+  turtle.Screen().addshape('HKUST.gif')
+  turtle.Turtle().shape('HKUST.gif')
 
 
 
@@ -52,7 +56,10 @@ def get_pos(i, j):
 
 ScreenSetup(width, height).create_screen()
 ScreenSetup(width, height).draw_grid()
-turtle.getscreen().onclick(get_pos)
+turtle.onscreenclick(get_pos)
+add_img()
+
+
 
 
 
